@@ -1,13 +1,177 @@
+:root{
+    --mainColor: white;
+    --mainColor-1: goldenrod;
+    --mainColor-2: chocolate;
+}
 *{
     padding: 0;
     margin: 0;
 }
 body{
     position: relative;
-    background-color: white;
+    background-color: var(--mainColor);
     font-family: Arial, Helvetica, sans-serif;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+.keyframe{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    left: 88%;
+    top: 78%;
+}
+.keyframe .mummy{
+    margin-left: 30px;
+    height: 110px;
+    width: 150px;
+    background-size: contain;
+    animation: updown 2s infinite;
+}
+.keyframe .coffin{
+    height: 60px;
+    width: 200px;
+    background-size: contain;
+    z-index: 1;
+}
+@keyframes updown{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+header{
+    display: flex;
+    position: sticky;
+    top: 0px;
+    align-items: center;
+    height: 75px;
+    background-color: var(--mainColor);
+    box-shadow: 0px 0px 20px 0px;
+    z-index: 1;
+}
+header img{
+    margin-left: 125px;
+    align-self: left;
+    height: 60px;
+    background-size: contain;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.search input{
+    padding: 0.5rem 1rem;
+    margin-left: 90px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+.search button{
+    padding: 0.5rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+nav{
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    font-size: 20px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:black;
+    transition: 0.3s ease-in-out;
+}
+nav ul li a:hover{
+    color: var(--mainColor-1);
+}
+.start .image{
+    position: relative;
+    display: inline-block;
+}
+.start .image img{
+    display: block;
+    height: 635px;
+    filter:brightness(85%) blur(0px);
+    background-size: contain;
+    transition: 0.3s ease-in-out;
+}
+.start .image img:hover{
+    filter:brightness(75%) blur(1px);
+}
+.start .image h1{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: var(--mainColor);
+    font-size: 60px;
+}
+.button-watch{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: 180px;
+    height: 65px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--mainColor);
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+.button-watch:hover{
+    transform: scale(1.1);
+    background-color:beige;
+    box-shadow: 1px 0px 50px 1px black;
+}
+.opening h2{
+    font-family: 'Garamond', serif;
+    color: var(--mainColor-2);
+    margin: 50px 0px 100px 20px;
+    font-size: 40px;
+}
+.opening h3{
+    margin: 25px 600px 50px 20px;
+    font-size: 25px;
+    line-height: 1.8;
+}
+.opening .image{
+    position: relative;
+    width: 635px;
+    display: inline-block;
+}
+.opening .image img{
+    position: absolute;
+    top: 185px;
+    right: -125%;
+    height: 300px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 1px 0px 60px 0px black;
+    filter:brightness(75%) blur(0.5px);
+    background-size: contain;
+    transition: 0.3s ease-in-out;
+}
+.opening .image img:hover{
+    transform: scale(1.1);
+    filter:brightness(100%) blur(0px);
 }
 .image2{
     display: flex;
@@ -38,150 +202,11 @@ body{
     background-color: black;
     opacity: 0.4;
 }
-header{
-    display: flex;
-    position: sticky;
-    top: 0px;
-    align-items: center;
-    height: 75px;
-    background-color: white;
-    box-shadow: 0px 0px 20px 0px;
-    z-index: 1;
-}
-header img{
-    margin-left: 125px;
-    align-self: left;
-    height: 60px;
-    background-size: contain;
-}
-nav{
+.style-h2{
     position: absolute;
-    top: 35%;
-    left: 65%;
-    font-size: 20px;
-}
-nav ul{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    width: 450px;
-}
-nav ul li a{
-    text-decoration: none;
-    color:black;
-    transition: 0.3s ease-in-out;
-}
-nav ul li a:hover{
-    color: goldenrod;
-}
-.l1::after{
-    content:"";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: goldenrod;
-    transition: width 0.3s ease;
-}
-.l1:hover::after{
-    width:27.5%;
-}
-.l2::after{
-    content:"";
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-    width: 0;
-    height: 2px;
-    background-color: goldenrod;
-    transition: width 0.3s ease;
-}
-.l2:hover::after{
-    width:26%;
-}
-.l3::after{
-    content:"";
-    position: absolute;
-    bottom: 0;
-    left: 77.5%;
-    width: 0;
-    height: 2px;
-    background-color: goldenrod;
-    transition: width 0.3s ease;
-}
-.l3:hover::after{
-    width:23%;
-}
-.start .image{
-    position: relative;
-    display: inline-block;
-}
-.start .image img{
-    display: block;
-    height: 635px;
-    filter:brightness(85%) blur(0px);
-    background-size: contain;
-    transition: 0.3s ease-in-out;
-}
-.start .image img:hover{
-    filter:brightness(75%) blur(1px);
-}
-.start .image h1{
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    color: white;
-    font-size: 60px;
-}
-.button-watch{
-    position: absolute;
-    top: 60%;
-    left: 5%;
-    width: 180px;
-    height: 65px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 20px;
-    transition: 0.3s ease-in-out;
-}
-.button-watch:hover{
-    transform: scale(1.1);
-    background-color:beige;
-    box-shadow: 1px 0px 50px 1px black;
-}
-.opening h2{
-    font-family: 'Garamond', serif;
-    color: chocolate;
-    margin: 50px 0px 100px 20px;
+    color: var(--mainColor);
     font-size: 40px;
-}
-.opening h3{
-    margin: 25px 600px 50px 20px;
-    font-size: 25px;
-    line-height: 1.8;
-}
-.opening .image{
-    position: relative;
-    width: 635px;
-    display: inline-block;
-}
-.opening .image img{
-    position: absolute;
-    top: 185px;
-    right: -125%;
-    height: 300px;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 1px 0px 60px 0px black;
-    filter:brightness(75%) blur(0.5px);
-    background-size: contain;
-    transition: 0.3s ease-in-out;
-}
-.opening .image img:hover{
-    transform: scale(1.1);
-    filter:brightness(100%) blur(0px);
+    top: 85%;
 }
 .TV1{
     position: relative;
@@ -192,7 +217,7 @@ nav ul li a:hover{
 .TV1 h2{
     font-family: 'Garamond', serif;
     margin: 0px 0px 0px -570px;
-    color:chocolate;
+    color:var(--mainColor-2);
     font-size: 40px;
     transition: 0.3s ease;
 }
@@ -232,48 +257,54 @@ nav ul li a:hover{
     transform: scale(1.1);
     filter:brightness(100%) blur(0px);
 }
-.TV2 h2{
+.image3{
+    margin-bottom: 40px;
     font-family: 'Garamond', serif;
-    margin: 50px 0px 100px 240px;
-    font-size: 40px;
-}
-.TV2 h3{
-    margin: 25px 600px 50px 20px;
-    font-size: 25px;
-    line-height: 1.8;
-}
-.TV2 ul{
-    margin: 50px 0px 50px 50px;
-    list-style:circle;
-}
-.TV2 li{
-    padding:20px;
-    font-size: 25px;
-}
-.TV2 .image{
+    display: flex;
     position: relative;
-    width: 635px;
-    display: inline-block;
+    margin-top: -40px;
+    justify-content: center;
+    align-items: center;
 }
-.TV2 .image img{
-    position: absolute;
-    top: 320px;
-    right: -125%;
-    height: 300px;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 1px 0px 60px 0px black;
-    filter:brightness(75%) blur(0.5px);
-    background-size: contain;
+.image3 img{
+    display: block;
+    width: 100%;
+    height: 450px;
+    filter: brightness(50%);
+    background-size: cover;
     transition: 0.3s ease-in-out;
 }
-.TV2 .image img:hover{
-    transform: scale(1.1);
-    filter:brightness(100%) blur(0px);
+.image3 .cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+}
+.image3 .cards .card{
+    height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--mainColor);
+    border: 2px solid var(--mainColor);
+    font-size: 25px;
+}
+.image3 .cards .card .top{
+    margin-top: 20px;
+}
+.image3 .cards .card .center{
+    margin-top: 40px;
+}
+.image3 .cards .card .bottom{
+    font-size: 28px;
+    margin-top: 20px;
 }
 .presidents h2{
     font-family: 'Garamond', serif;
-    color: chocolate;
+    color: var(--mainColor-2);
     font-size: 40px;
     margin: 0px 0px 75px 20px;
 }
@@ -361,7 +392,7 @@ footer{
 footer .container{
     position: absolute;
     display: flex;
-    color: white;
+    color: var(--mainColor);
     font-size: 25px;
     bottom: 300px;
     width: 85%;
@@ -385,7 +416,7 @@ footer .container h2{
     border-radius: 50px;
     font-size: 20px;
     background-color: black;
-    color: white;
+    color: var(--mainColor);
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
@@ -400,17 +431,17 @@ footer .container h2{
     top: 40px;
     width: 240px;
     height: 45px;
-    border: 2px solid white;
+    border: 2px solid var(--mainColor);
     border-radius: 50px;
     font-size: 20px;
     background-color: transparent;
-    color: white;
+    color: var(--mainColor);
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
 .button-footer2:hover{
     transform: translateX(30px);
-    background-color: white;
+    background-color: var(--mainColor);
     color: black;
 }
 .container p{
@@ -429,7 +460,7 @@ footer .container h2{
     width: 300px;
     font-size: 25px;
     padding-left: 5px;
-    color: white;
+    color: var(--mainColor);
     background-color: transparent;
     border: 0px;
     cursor: pointer;
@@ -448,7 +479,7 @@ footer .container h2{
 .social-media .icon{
     margin: 0px 30px 0px 30px;
     font-size: 45px;
-    color: white;
+    color: var(--mainColor);
     transition: 0.3s ease-in-out;
 }
 .social-media .icon:hover{
@@ -468,7 +499,7 @@ footer .container h2{
     width: 300px;
     font-size: 25px;
     padding-left: 5px;
-    color: white;
+    color: var(--mainColor);
     background-color: transparent;
     border: 0px;
     cursor: pointer;
@@ -478,86 +509,4 @@ footer .container h2{
 .links2 .button-link:hover{
     background-color: darkcyan;
     transform: translateX(30px);
-}
-.image3{
-    margin-bottom: 40px;
-    font-family: 'Garamond', serif;
-    display: flex;
-    position: relative;
-    margin-top: -40px;
-    justify-content: center;
-    align-items: center;
-}
-.image3 img{
-    display: block;
-    width: 100%;
-    height: 450px;
-    filter: brightness(50%);
-    background-size: cover;
-    transition: 0.3s ease-in-out;
-}
-.image3 .cards{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 120px;
-    position: absolute;
-}
-.image3 .cards .card{
-    height: 250px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    border: 2px solid white;
-    font-size: 25px;
-}
-.image3 .cards .card .top{
-    margin-top: 20px;
-}
-.image3 .cards .card .center{
-    margin-top: 40px;
-}
-.image3 .cards .card .bottom{
-    font-size: 28px;
-    margin-top: 20px;
-}
-.style-h2{
-    position: absolute;
-    color: white;
-    font-size: 40px;
-    top: 85%;
-}
-.keyframe{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    left: 84%;
-    top: 70%;
-}
-.keyframe .mummy{
-    height: 150px;
-    width: 200px;
-    background-size: contain;
-    animation: updown 2s infinite;
-}
-.keyframe .coffin{
-    height: 90px;
-    width: 250px;
-    background-size: contain;
-    z-index: 1;
-}
-@keyframes updown{
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(50px);
-    }
-    100%{
-        transform: translateY(0);
-    }
 }
