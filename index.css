@@ -154,13 +154,13 @@ nav ul li a:hover{
 }
 .opening .image{
     position: relative;
-    width: 635px;
+    width: 70%;
     display: inline-block;
 }
 .opening .image img{
     position: absolute;
     top: 185px;
-    right: -125%;
+    left: 90%;
     height: 300px;
     border-radius: 20px;
     cursor: pointer;
@@ -323,13 +323,13 @@ nav ul li a:hover{
 }
 .presidents .image{
     position: relative;
-    width: 635px;
+    width: 70%;
     display: inline-block;
 }
 .presidents .image img{
     position: absolute;
-    top: 160px;
-    right: -125%;
+    top: 120px;
+    left: 80%;
     height: 300px;
     border-radius: 20px;
     cursor: pointer;
@@ -408,7 +408,7 @@ footer .container h2{
 }
 .button-footer1{
     position: absolute;
-    left: 800px;
+    left: 63%;
     top: 40px;
     width: 140px;
     height: 45px;
@@ -427,7 +427,7 @@ footer .container h2{
 }
 .button-footer2{
     position: absolute;
-    left: 1000px;
+    left: 78%;
     top: 40px;
     width: 240px;
     height: 45px;
@@ -489,7 +489,7 @@ footer .container h2{
 .links2{
     position: absolute;
     top: 30px;
-    left: 1100px;
+    left: 72%;
     display: flex;
     margin-top: 80px;
     margin-right: 80px;
